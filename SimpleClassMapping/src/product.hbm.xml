@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.hibernate.org/xsd/hibernate-mapping hibernate-mapping-4.0.xsd ">
+	<class name="com.zensar.entities.Product" table="PRODUCT">
+		<id name="productId" column="ID">
+			<generator class="assigned"></generator>
+				<!-- if generator class="assigned" then Hibernate will not auto-generate / auto-increment the ID. -->
+				<!-- if generator class="increment" then Hibernate will start incrementing the max value found in the ID in the table. -->
+				<!-- for this to happen, primary key must be int or number. -->
+				<!-- otherwise if a string field is PRI, then uuid.string will generate 16char long unique string.  -->
+				<!-- and if generator class="uuid.hex" then uuid.hex will generate 32char long unique string. -->
+				<!-- if class="native" then unique ID will be generated based on data present in the db table. -->
+		</id>
+		<property name="name"></property>
+		<property name="brand"></property>
+		<property name="price"></property>
+	</class>
+</hibernate-mapping>
